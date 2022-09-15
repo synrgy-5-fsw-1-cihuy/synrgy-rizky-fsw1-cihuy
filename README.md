@@ -1,4 +1,4 @@
-# Belajar Git
+# Challenge 1
 
 ### Rizky Prayatman
 ### Fullstack Web Development
