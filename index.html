@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binar Car</title>
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script
       src="https://kit.fontawesome.com/e556a6973c.js"
       crossorigin="anonymous"
@@ -16,24 +16,48 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary pt-2 fixed-top">
       <div class="container-fluid">
-        <div class="ms-sm-5">
+        <div class="ms-xl-5">
           <a class="navbar-brand logo fs-4" href="#">Binar<span>Car</span></a>
         </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Menu untuk Mobile -->
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" />
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+          <div class="spinner diagonal part-1"></div>
+          <div class="spinner horizontal"></div>
+          <div class="spinner diagonal part-2"></div>
+        </label>
+        <div id="sidebarMenu">
+          <div class="sideMenu">
+            <ul class="sidebarMenuInner">
+              <li><h1>BCR</h1></li>
+              <li>
+                <a class="font-14" href="#our-services">Our services</a>
+              </li>
+              <li>
+                <a class="font-14" href="#why-us">Why Us</a>
+              </li>
+              <li>
+                <a class="font-14" href="#testimoni">Testimonial</a>
+              </li>
+              <li>
+                <a class="font-14" href="#faq">FAQ</a>
+              </li>
+              <li>
+                <a class="bt-green p-btn" href="#">Register</a>
+              </li>
+            </ul>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Menu Web -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-5 mb-1 mb-lg-0 w-100 justify-content-end">
             <li class="nav-item px-3">
-              <a class="nav-link text-body" aria-current="page" href="#our-services"
+              <a
+                class="nav-link text-body"
+                aria-current="page"
+                href="#our-services"
                 >Our Service</a
               >
             </li>
@@ -54,9 +78,10 @@
       </div>
     </nav>
 
-    <div class="d-flex flex-column flex-xl-row bg-primary mt-5">
-      <div class="mx-5 mt-5">
-        <h1 class="fs-2 ms-2 mt-5 fw-bold">
+    <!-- Hero -->
+    <div class="d-flex flex-column flex-xl-row bg-primary mt-xl-5 pt-xl-5">
+      <div class="mx-xl-5 mx-3 mt-5">
+        <h1 class="font-36 ms-xl-2 mt-5 fw-bold">
           Sewa & Rental Mobil Terbaik di kawasan Gorontalo
         </h1>
         <p class="ms-2 font-14 pe-5 me-5">
@@ -73,17 +98,21 @@
           >
         </button>
       </div>
-      <div class="w-100 mt-3">
-        <img src="img/img_car.png" alt="..." />
+      <div class="width-50 mt-3">
+        <img
+          class="img-hero-mobile"
+          src="assets/img/img_car.png"
+          alt="rental mobil gorontalo"
+        />
       </div>
     </div>
 
-    <div class="container py-5" id="our-services">
+    <div class="container py-xl-5 py-lg-3" id="our-services">
       <div class="row mt-5">
-        <div class="col">
-          <img src="img/img_service.png" alt="" srcset="" />
+        <div class="col-lg text-center">
+          <img class="w-75" src="assets/img/img_service.png" alt="" srcset="" />
         </div>
-        <div class="col mt-5">
+        <div class="col-lg mt-5">
           <h2 class="font-24">
             Best Car Rental for any kind of trip in Gorontalo!
           </h2>
@@ -119,11 +148,13 @@
       </div>
     </div>
 
-    <div class="container py-5 mt-5" id="why-us">
-      <h1 class="font-24">Why Us?</h1>
-      <p class="font-14">Mengapa harus pilih Binar Car Rental</p>
+    <div class="container pt-5 mt-xl-4" id="why-us">
+      <h1 class="font-24 text-center text-xl-start">Why Us?</h1>
+      <p class="font-14 text-center text-xl-start">
+        Mengapa harus pilih Binar Car Rental
+      </p>
       <div class="row gap-4 mx-1">
-        <div class="col border border-1 rounded px-4 mx-1">
+        <div class="col-lg border border-1 rounded px-4">
           <i class="fa-regular fa-thumbs-up mt-4"></i>
           <h2 class="font-16">Mobil Lengkap</h2>
           <p class="font-14">
@@ -131,7 +162,7 @@
             terawat
           </p>
         </div>
-        <div class="col border border-1 rounded px-4 mx-1">
+        <div class="col-lg border border-1 rounded px-4">
           <i class="fa-solid fa-tag mt-4"></i>
           <h2 class="font-16">Harga Murah</h2>
           <p class="font-14">
@@ -139,7 +170,7 @@
             mobil lain
           </p>
         </div>
-        <div class="col border border-1 rounded px-4 mx-1">
+        <div class="col-lg border border-1 rounded px-4">
           <i class="fa-regular fa-clock mt-4"></i>
           <h2 class="font-16">Layanan 24 Jam</h2>
           <p class="font-14">
@@ -147,7 +178,7 @@
             tersedia di akhir minggu
           </p>
         </div>
-        <div class="col border border-1 rounded px-4 mx-1">
+        <div class="col-lg border border-1 rounded px-4">
           <i class="fa-solid fa-award mt-4"></i>
           <h2 class="font-16">Sopir Profesional</h2>
           <p class="font-14">
@@ -158,7 +189,7 @@
       </div>
     </div>
 
-    <div class="my-5 pt-5 d-grid justify-content-center" id="testimoni">
+    <div class="my-xl-3 pt-5 d-grid justify-content-center" id="testimoni">
       <h1 class="font-24 text-center">Testimonial</h1>
       <p class="font-14 text-center mt-2">
         Berbagai review positif dari para pelanggan kami
@@ -168,10 +199,10 @@
         class="scroll_container mt-3"
         id="scroll_container"
       >
-        <div class="d-flex justify-content-center" style="width: 140%">
+        <div class="d-flex justify-content-center w-140 w-240">
           <div class="bg-primary py-5 px-5 w-50 rounded d-flex">
             <div class="mx-3 d-flex align-items-center">
-              <img src="img/img_photo-1.png" alt="" />
+              <img src="assets/img/img_photo-1.png" alt="" />
             </div>
             <div>
               <div>
@@ -193,7 +224,7 @@
 
           <div class="bg-primary py-5 px-5 w-50 mx-4 rounded d-flex">
             <div class="mx-3 d-flex align-items-center">
-              <img src="img/img_photo-1.png" alt="" />
+              <img src="assets/img/img_photo-1.png" alt="" />
             </div>
             <div>
               <div>
@@ -215,7 +246,7 @@
 
           <div class="bg-primary py-5 px-5 w-50 rounded d-flex">
             <div class="mx-3 d-flex align-items-center">
-              <img src="img/img_photo-2.png" alt="" />
+              <img src="assets/img/img_photo-2.png" alt="" />
             </div>
             <div>
               <div>
@@ -268,13 +299,15 @@
 
     <div class="container" id="faq">
       <div class="row">
-        <div class="col-5">
-          <h1 class="font-24">Frequently Asked Question</h1>
-          <p class="font-14">
+        <div class="col-xl-5 col-lg">
+          <h1 class="font-24 text-center text-xl-start">
+            Frequently Asked Question
+          </h1>
+          <p class="font-14 text-center text-xl-start">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
         </div>
-        <div class="col-7">
+        <div class="col-xl-7 col-lg">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingOne">
@@ -421,10 +454,10 @@
       </div>
     </div>
 
-    <footer class="py-5 mt-5">
+    <footer class="py-5 mt-xl-5">
       <div class="container">
         <div class="row">
-          <div class="col-3">
+          <div class="col-xl-3 col-lg">
             <p class="font-14">
               Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000
             </p>
@@ -432,44 +465,24 @@
             <p class="font-14">081-233-334-808</p>
           </div>
 
-          <div class="col-2">
+          <div class="col-xl-2 col-lg">
             <ul style="list-style: none">
               <li>
-                <a
-                  style="text-decoration: none; color: black"
-                  class="font-14"
-                  href="#our-services"
-                  >Our services</a
-                >
+                <a class="font-14" href="#our-services">Our services</a>
               </li>
               <li>
-                <a
-                  style="text-decoration: none; color: black"
-                  class="font-14"
-                  href="#why-us"
-                  >Why Us</a
-                >
+                <a class="font-14" href="#why-us">Why Us</a>
               </li>
               <li>
-                <a
-                  style="text-decoration: none; color: black"
-                  class="font-14"
-                  href="#testimoni"
-                  >Testimonial</a
-                >
+                <a class="font-14" href="#testimoni">Testimonial</a>
               </li>
               <li>
-                <a
-                  style="text-decoration: none; color: black"
-                  class="font-14"
-                  href="#faq"
-                  >FAQ</a
-                >
+                <a class="font-14" href="#faq">FAQ</a>
               </li>
             </ul>
           </div>
 
-          <div class="col-3 ps-3">
+          <div class="col-xl-3 col-lg ps-3">
             <p class="font-14">Connect with us</p>
             <div>
               <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -480,38 +493,15 @@
             </div>
           </div>
 
-          <div class="col-3 ps-3">
-            <p class="font-14">Copyright Binar 2022</p>
+          <div class="col-xl-3 col-lg ps-3">
+            <p class="font-14 pt-3 pt-xl-0">Copyright Binar 2022</p>
             <a class="navbar-brand logo fs-4" href="#">Binar<span>Car</span></a>
           </div>
         </div>
       </div>
     </footer>
 
-    <script src="js/bootstrap.js"></script>
-    <script>
-      window.addEventListener("load", function (e) {
-        var container = document.querySelector(".scroll_container");
-        var middle =
-          container.children[Math.floor((container.children.length - 1) / 2)];
-        container.scrollLeft =
-          middle.offsetLeft +
-          middle.offsetWidth / 2 -
-          container.offsetWidth / 2;
-      });
-    </script>
-    <script>
-      const buttonRight = document.getElementById("next");
-      const buttonLeft = document.getElementById("prev");
-
-      buttonRight.onclick = function () {
-        console.log("next");
-        document.getElementById("scroll_container").scrollLeft += 300;
-      };
-      buttonLeft.onclick = function () {
-        console.log("prev");
-        document.getElementById("scroll_container").scrollLeft -= 300;
-      };
-    </script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

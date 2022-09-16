@@ -1,0 +1,367 @@
+@import url("http://fonts.cdnfonts.com/css/helvetica-neue-9");
+
+body {
+  font-family: "Helvetica Neue", "Helvetica" !important;
+}
+
+.logo {
+  background: #0d28a6;
+  color: white !important;
+  padding: 2px 12px;
+  font-size: large;
+  border-radius: 5px;
+}
+
+.logo span {
+  color: aqua;
+}
+
+.bg-primary {
+  background: #f1f3ff !important;
+}
+
+.bg-primaryDarkBlue {
+  background: #0d28a6;
+  border-radius: 13px;
+}
+
+.bg-list {
+  background: #cfd4ed;
+}
+
+.fa-check {
+  color: #0d28a6;
+  padding: 4px;
+  border-radius: 50%;
+  font-size: medium;
+}
+
+.fa-thumbs-up {
+  background: #f9cc00;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.fa-tag {
+  background: #fa2c5a;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.fa-clock {
+  background: #0d28a6;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.fa-award {
+  background: #5cb85f;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.fa-star {
+  color: #f9cc00;
+  font-size: 18px;
+  padding: 16px 0px;
+}
+
+.fa-facebook-f {
+  background: #0d28a6;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.fa-instagram,
+.fa-twitter,
+.fa-envelope,
+.fa-twitch {
+  background: #0d28a6;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.bt-green {
+  background: #5cb85f;
+  border-radius: 2px;
+  color: white !important;
+}
+
+button {
+  border-style: none;
+}
+
+#our-services li {
+  list-style: none;
+}
+
+.font-36 {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+}
+
+.font-24 {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.font-14 {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.font-16 {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.carousel-item {
+  display: grid !important;
+  width: 80% !important;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-inner {
+  position: relative;
+  display: grid !important;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 10px !important;
+  width: 100%;
+  overflow: hidden;
+}
+
+#prev,
+#next {
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #c4c4c4;
+  margin: 0px 10px;
+}
+
+#prev:hover,
+#next:hover {
+  background-color: #5cb85f;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid #c4c4c4;
+}
+
+.w-140 {
+  width: 140%;
+}
+
+footer ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+#openSidebarMenu, #SidebarMenu{
+  display: none;
+}
+
+.sidebarMenuInner{
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .sideMenu{
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    transform: translateX(0px);
+    transition: transform 250ms ease-in-out;
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .w-240 {
+    width: 240%;
+  }
+
+  .width-50 {
+    width: 50%;
+  }
+
+  .img-hero-mobile {
+    width: 200%;
+    padding-left: 25px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  footer ul li {
+    padding: 10px 0px;
+  }
+
+  footer ul li a {
+    margin-left: -32px;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  footer ul li a:hover {
+    color: blue;
+  }
+
+  /* referensi menu untuk mobile https://codepen.io/plavookac/pen/qomrMw */
+  
+  #sidebarMenu {
+    height: 100%;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    top: 0;
+    transform: translateX(950px);
+    transition: transform 250ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6);;
+  }
+
+  .sideMenu{
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+    right: 0;
+  }
+
+  .sidebarMenuInner {
+    display: inline;
+    color: black;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .sidebarMenuInner li {
+    list-style: none;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebarMenuInner li a {
+    color: black;
+    font-size: medium;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 25px 10px;
+  }
+
+  .p-btn{
+    padding: 15px 15px;
+    text-align: center;
+  }
+
+  .sidebarMenuInner li h1{
+    font-size: 24px;
+    padding: 5px 0px 0px 10px;
+  }
+
+  input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+  }
+  
+  input[type="checkbox"] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+  }
+  .sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 18px;
+    right: 15px;
+    height: 22px;
+    width: 22px;
+  }
+  .spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: black;
+  }
+  .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+  }
+  .diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+  }
+  .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+  }
+  input[type="checkbox"]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+  }
+  input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+  }
+  input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+  }
+}
+
+
