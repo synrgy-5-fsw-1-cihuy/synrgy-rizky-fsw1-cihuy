@@ -1,4 +1,4 @@
-# Challenge 1
+# Challenge 2
 
 ### Rizky Prayatman
 ### Fullstack Web Development
