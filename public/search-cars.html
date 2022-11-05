@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Sabrina" />
+    <meta name="description" content="Lorem ipsum dolor sit amet" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>Binar: Challenge 04</title>
+
+    <!-- Example CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/e556a6973c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary pt-2 fixed-top">
+        <div class="container-fluid">
+            <div class="ms-xl-5">
+                <a class="navbar-brand logo fs-4" href="/">Binar<span>Car</span></a>
+            </div>
+            <!-- Menu untuk Mobile -->
+            <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" />
+            <label for="openSidebarMenu" class="sidebarIconToggle">
+                <div class="spinner diagonal part-1"></div>
+                <div class="spinner horizontal"></div>
+                <div class="spinner diagonal part-2"></div>
+            </label>
+            <div id="sidebarMenu">
+                <div class="sideMenu">
+                    <ul class="sidebarMenuInner">
+                        <li>
+                            <h1>BCR</h1>
+                        </li>
+                        <li>
+                            <a class="font-14" href="/#our-services">Our services</a>
+                        </li>
+                        <li>
+                            <a class="font-14" href="/#why-us">Why Us</a>
+                        </li>
+                        <li>
+                            <a class="font-14" href="/#testimoni">Testimonial</a>
+                        </li>
+                        <li>
+                            <a class="font-14" href="/#faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="bt-green p-btn" href="#">Register</a>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Menu Web -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-5 mb-1 mb-lg-0 w-100 justify-content-end">
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-body" aria-current="page" href="/#our-services">Our Service</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-body" href="/#why-us">Why Us</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-body" href="/#testimoni">Testimoni</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-body" href="/#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link text-body bt-green" href="#">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section>
+        <div class="d-flex flex-column flex-xl-row mt-xl-5 pt-xl-5 bg-primary">
+            <div class="mx-xl-5 mx-3 mt-5">
+                <h1 class="font-36 ms-xl-2 mt-5 fw-bold">
+                    Sewa & Rental Mobil Terbaik di kawasan Gorontalo
+                </h1>
+                <p class="ms-2 font-14 pe-5 me-5">
+                    Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas
+                    terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
+                    untuk sewa mobil selama 24 jam.
+                </p>
+            </div>
+            <div class="width-50 mt-3">
+                <img class="img-hero-mobile" src="images/img/img_car.png" alt="rental mobil gorontalo" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section id="search" style="margin-top: -50px; width: 100%; position: absolute;">
+        <div class="container shadow px-3 py-3 bg-white rounded-2">
+            <form id="form_filter_submit">
+                <div class="row">
+                    <div class="input-group col-xl px-3">
+                        <label>
+                            Tipe Driver
+                        </label>
+                        <select class="w-100 h-auto mt-lg-4 border border-success rounded" id="tipe_driver"
+                            name="tipe-driver">
+                            <option>Pilih Tipe Driver</option>
+                            <option value="dengan_sopir">Dengan Sopir</option>
+                            <option value="tanpa_sopir">Tanpa Sopir (Lepas Kunci)</option>
+                        </select>
+                    </div>
+                    <div class="input-group col-xl px-3">
+                        <label>
+                            Tanggal
+                        </label>
+                        <input id="tanggal_booking" type="date" name="tanggal-booking" placeholder="Pilih Tanggal"
+                            class="w-100 h-auto mt-lg-4 border border-success rounded">
+                    </div>
+                    <div class="input-group col-xl px-3">
+                        <label>
+                            Waktu Jemput/Ambil
+                        </label>
+                        <input type="time" id="waktu_booking" name="waktu-booking" class="w-100 h-auto mt-lg-4 border border-success rounded"
+                            required />
+                    </div>
+                    <div class="input-group col-xl px-3 w-100">
+                        <label>
+                            Jumlah Penumpang (optional)
+                        </label>
+                        <input id="total_penumpang" type="number" name="jumlah-penumpang" placeholder="Jumlah Penumpang"
+                            class="w-100 h-auto border border-success rounded">
+                    </div>
+                    <div class="input-group col px-3 w-75">
+                        <button id="btn-filter" type="submit" class="btn btn-success w-100 h-50 mt-5">Cari
+                            Mobil</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- OUTPUT DATA FROM JSON -->
+    <div class="mt-5 pt-5">
+        <button id="load-btn">Load</button>
+        <button id="clear-btn">Clear</button>
+        <div id="cars-container"></div>
+    </div>
+
+
+    <footer class="py-5 mt-xl-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg">
+                    <p class="font-14">
+                        Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000
+                    </p>
+                    <p class="font-14">binarcarrental@gmail.com</p>
+                    <p class="font-14">081-233-334-808</p>
+                </div>
+
+                <div class="col-xl-2 col-lg">
+                    <ul style="list-style: none">
+                        <li>
+                            <a class="font-14" href="#our-services">Our services</a>
+                        </li>
+                        <li>
+                            <a class="font-14" href="#why-us">Why Us</a>
+                        </li>
+                        <li>
+                            <a class="font-14" href="#testimoni">Testimonial</a>
+                        </li>
+                        <li>
+                            <a class="font-14" href="#faq">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-xl-3 col-lg ps-3">
+                    <p class="font-14">Connect with us</p>
+                    <div>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitch"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg ps-3">
+                    <p class="font-14 pt-3 pt-xl-0">Copyright Binar 2022</p>
+                    <a class="navbar-brand logo fs-4" href="#">Binar<span>Car</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Example Javascript -->
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="./scripts/binar.js"></script>
+    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/car.js"></script>
+    <script type="text/javascript" src="./scripts/main.js"></script>
+</body>
+
+</html>
