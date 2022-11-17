@@ -79,6 +79,10 @@ body {
   padding: 16px 0px;
 }
 
+.dark-blue{
+  color: #0d28a6;
+}
+
 .fa-facebook-f {
   background: #0d28a6;
   color: white;
@@ -178,8 +182,16 @@ button {
   border: 1px solid #c4c4c4;
 }
 
+.w-20{
+  width: 20rem;
+}
+
 .w-140 {
   width: 140%;
+}
+
+.h-120{
+  height: 120px;
 }
 
 footer ul li a {

@@ -41,15 +41,20 @@ class Car {
 
   render() {
     return `
-      <p>id: <b>${this.id}</b></p>
-      <p>plate: <b>${this.plate}</b></p>
-      <p>manufacture: <b>${this.manufacture}</b></p>
-      <p>model: <b>${this.model}</b></p>
-      <p>available at: <b>${this.availableAt}</b></p>
-      <img src="${this.image}" alt="${this.manufacture}" width="64px">
-      <p>Capacity: <b>${this.capacity}</b></p>
-      <p>Available: <b>${this.available}</b></p>
-      <p>Options: <b>${this.options}</b></p>
+    <div class="px-3 py-2">
+      <div class="card shadow-sm w-20">
+        <img src="${this.image}" class="card-img-top img-fluid" alt="${this.manufacture}" style="height: 195px; border-radius: 3px; object-fit: cover;"/>
+        <div class="card-body">
+            <p class="card-title">${this.manufacture} ${this.model}</p>
+            <p class="fw-bold">${this.rentPerDay} / hari</p>
+            <p class="card-text h-120">${this.description}</p>
+            <div class="my-2"><i class="fa-sharp fa-solid fa-couch dark-blue"></i> ${this.capacity} Orang</div>
+            <div class="my-2"><i class="fa-solid fa-car-side dark-blue"></i> ${this.transmission}</div>
+            <div class="my-2"><i class="fa-solid fa-calendar-days dark-blue"></i> ${this.year}</div>
+            <a href="#" class="btn btn-success text-white w-100 mt-2 fw-bold mt-4 ">Pilih Mobil</a>
+        </div>
+      </div>
+    </div>
     `;
   }
 }

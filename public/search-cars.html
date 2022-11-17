@@ -123,8 +123,8 @@
                         <label>
                             Waktu Jemput/Ambil
                         </label>
-                        <input type="time" id="waktu_booking" name="waktu-booking" class="w-100 h-auto mt-lg-4 border border-success rounded"
-                            required />
+                        <input type="time" id="waktu_booking" name="waktu-booking"
+                            class="w-100 h-auto mt-lg-4 border border-success rounded" required />
                     </div>
                     <div class="input-group col-xl px-3 w-100">
                         <label>
@@ -144,10 +144,69 @@
 
     <!-- OUTPUT DATA FROM JSON -->
     <div class="mt-5 pt-5">
-        <button id="load-btn">Load</button>
-        <button id="clear-btn">Clear</button>
-        <div id="cars-container"></div>
+        <!-- <button id="load-btn">Load</button>
+        <button id="clear-btn">Clear</button> -->
+        <div class="container">
+            <div id="load-btn"></div>
+            <div id="clear-btn"></div>
+            <div id="cars-container" class="d-flex align-content-center flex-wrap justify-content-center  w-100"></div>
+            <!-- <div class="d-flex">
+                <div id="cars-container"></div>
+            </div> -->
+        </div>
     </div>
+
+    <!-- <div class="mt-5 pt-5">
+        <div class="container">
+            <div class="d-flex flex-wrap gap-5 justify-content-around">
+                <div>
+                    <div class="card">
+                        <img src="${this.image}" class="card-img-top img-fluid" alt="${this.manufacture}"/>
+                        <div class="card-body ps-5">
+                            <p class="card-title">${this.manufacture} ${this.model}</p>
+                            <p class="fw-bold">"halo" / hari</p>
+                            <p class="card-text">${this.description}</p>
+                            <div class="my-2"><i class="bi bi-people me-2"></i>${this.capacity} Orang</div>
+                            <div class="my-2"><i class="bi bi-gear me-2"></i>${this.transmission}</div>
+                            <div class="my-2"><i class="bi bi-calendar4 me-2"></i>${this.year}</div>
+                            <a href="#" class="btn btn-success text-white w-100 mt-2 fw-bold mt-4 ">Pilih Mobil</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div>
+                    <div class="card">
+                        <img src="${this.image}" class="card-img-top img-fluid" alt="${this.manufacture}"/>
+                        <div class="card-body ps-5">
+                            <p class="card-title">${this.manufacture} ${this.model}</p>
+                            <p class="fw-bold">"halo" / hari</p>
+                            <p class="card-text">${this.description}</p>
+                            <div class="my-2"><i class="bi bi-people me-2"></i>${this.capacity} Orang</div>
+                            <div class="my-2"><i class="bi bi-gear me-2"></i>${this.transmission}</div>
+                            <div class="my-2"><i class="bi bi-calendar4 me-2"></i>${this.year}</div>
+                            <a href="#" class="btn btn-success text-white w-100 mt-2 fw-bold mt-4 ">Pilih Mobil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+                        <img src="${this.image}" class="card-img-top img-fluid" alt="${this.manufacture}"/>
+                        <div class="card-body ps-5">
+                            <p class="card-title">${this.manufacture} ${this.model}</p>
+                            <p class="fw-bold">"halo" / hari</p>
+                            <p class="card-text">${this.description}</p>
+                            <div class="my-2"><i class="bi bi-people me-2"></i>${this.capacity} Orang</div>
+                            <div class="my-2"><i class="bi bi-gear me-2"></i>${this.transmission}</div>
+                            <div class="my-2"><i class="bi bi-calendar4 me-2"></i>${this.year}</div>
+                            <a href="#" class="btn btn-success text-white w-100 mt-2 fw-bold mt-4 ">Pilih Mobil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div> -->
 
 
     <footer class="py-5 mt-xl-5">
