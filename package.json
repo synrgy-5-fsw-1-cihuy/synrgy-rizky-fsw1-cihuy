@@ -1,0 +1,34 @@
+{
+  "name": "car-admin-binar-academy",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synrgy-5-fsw-1-cihuy/synrgy-rizky-fsw1-cihuy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/synrgy-5-fsw-1-cihuy/synrgy-rizky-fsw1-cihuy/issues"
+  },
+  "homepage": "https://github.com/synrgy-5-fsw-1-cihuy/synrgy-rizky-fsw1-cihuy#readme",
+  "dependencies": {
+    "cloudinary": "^1.32.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "formidable": "^2.0.1",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.25.7"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.5.2"
+  }
+}
