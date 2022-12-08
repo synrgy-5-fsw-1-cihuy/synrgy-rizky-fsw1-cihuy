@@ -1,6 +1,7 @@
-const CarService = require("../service/car-service.js");
+const CarService = require("../service/car.service.js");
 const formidableMiddleware = require("formidable");
 const cloudinaryConfig = require("../../../config/cloudinary.js");
+const jwt = require("../../../utils/jwt.js");
 
 const CarController = {
   findAll: async (req, res) => {
@@ -18,6 +19,9 @@ const CarController = {
 
   create: async (req, res) => {
     const form = formidableMiddleware({});
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(" ")[1];
+    const decodedToken = await jwt.checkTokenJwt(token);
 
     form.parse(req, (err, fields, files) => {
       if (err) {
@@ -47,6 +51,7 @@ const CarController = {
             price: fields.price,
             size: fields.size,
             photo: result.secure_url,
+            createdBy: decodedToken.email,
           }).then((result) => {
             res.status(201).json({
               message: "Add Car",
@@ -79,6 +84,9 @@ const CarController = {
 
   update: async (req, res) => {
     const form = formidableMiddleware({});
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(" ")[1];
+    const decodedToken = await jwt.checkTokenJwt(token);
 
     form.parse(req, (err, fields, files) => {
       if (err) {
@@ -111,17 +119,20 @@ const CarController = {
                 next(err);
                 return;
               }
-              CarService.update(req.params.id, {
-                name: fields.name,
-                price: fields.price,
-                size: fields.size,
-                photo: result.secure_url,
-              }).then((result) => {
-                res.status(202).json({
+              CarService.update(
+                {
+                  name: fields.name,
+                  price: fields.price,
+                  size: fields.size,
+                  photo: result.secure_url,
+                  updatedBy: decodedToken.email,
+                },
+                req.params.id
+              );
+              return res.status(202).json({
                   message: "Update Data Car",
-                  body: result,
+                  body: data,
                 });
-              });
             }
           );
         })
@@ -134,15 +145,29 @@ const CarController = {
 
   delete: async (req, res) => {
     const id = req.params.id;
+    const carById = await CarService.findOne(id, res);
 
-    CarService.delete(id).then(result => {
-      res.status(202).json({
-          message: "Data car deleted"
+    if (carById == null) {
+      res.status(404).json({ message: `Car not found with id: ${id}` });
+      return;
+    }
+
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(" ")[1];
+    const decodedToken = await jwt.checkTokenJwt(token);
+
+    await CarService.update({ deletedBy: decodedToken.email }, id);
+
+    CarService.delete(id)
+      .then((data) => {
+        res.status(202).json({
+          data: `Data car id: ${id} deleted by ${decodedToken.email}`,
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+        throw err;
       });
-  }).catch(err => {
-      console.error(err);
-      throw err;
-  });
   },
 };
 

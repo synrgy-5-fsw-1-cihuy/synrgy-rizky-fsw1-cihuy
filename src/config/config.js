@@ -1,5 +1,5 @@
-const fs = require('fs');
-require('dotenv').config()
+const fs = require("fs");
+require("dotenv").config();
 
 module.exports = {
   development: {
@@ -8,7 +8,7 @@ module.exports = {
     database: process.env.PGDATABASE,
     host: process.env.PGHOST,
     port: process.env.PGPORT,
-    dialect: "postgres"
+    dialect: "postgres",
   },
   test: {
     username: process.env.PGUSER,
@@ -16,7 +16,7 @@ module.exports = {
     database: process.env.PGDATABASE,
     host: process.env.PGHOST,
     port: process.env.PGPORT,
-    dialect: "postgres"
+    dialect: "postgres",
   },
   production: {
     username: process.env.PGUSER,
@@ -24,6 +24,6 @@ module.exports = {
     database: process.env.PGDATABASE,
     host: process.env.PGHOST,
     port: process.env.PGPORT,
-    dialect: "postgres"
-  }
+    dialect: "postgres",
+  },
 };

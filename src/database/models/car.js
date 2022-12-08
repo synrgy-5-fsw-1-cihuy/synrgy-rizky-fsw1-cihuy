@@ -17,9 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     price: DataTypes.STRING,
     size: DataTypes.STRING,
-    photo: DataTypes.STRING
+    photo: DataTypes.STRING,
+    createdBy: DataTypes.STRING,
+    updatedBy: DataTypes.STRING,
+    deletedBy: DataTypes.STRING
   }, {
     sequelize,
+    paranoid: true,
     modelName: 'Car',
   });
   return Car;
