@@ -83,7 +83,7 @@ const SearchSection = () => {
   };
 
   const onShowFilterCars = async (filter) => {
-    if (filter.all_car === "allcar" && filter.driverType === null && filter.capacity === 1) {
+    if (filter.all_car === "allcar" && filter.driverType === null) {
       const cars = await axios.get(CARS_ENDPOINT_URL);
       setCars(cars.data.data);
     }
@@ -93,6 +93,13 @@ const SearchSection = () => {
         CARS_ENDPOINT_URL + "?capacity=" + filter.capacity
       );
       setCars(cars.data.data);
+    }
+
+    if (filter.available_at != null && filter.all_car === "isFilter" && filter.capacity === 1) {
+      const filterCarByDate = await axios.get(
+        CARS_ENDPOINT_URL + "?availableAt=" + filter.available_at
+      );
+      setCars(filterCarByDate.data.data);
     }
 
     if (filter.driverType != null && filter.available_at != null) {
