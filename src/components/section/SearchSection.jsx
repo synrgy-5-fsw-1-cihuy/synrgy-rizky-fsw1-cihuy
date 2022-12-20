@@ -9,7 +9,8 @@ import {
   faCalendarWeek,
 } from "@fortawesome/free-solid-svg-icons";
 
-const CARS_ENDPOINT_URL = "https://back-end-car-rental-production.up.railway.app/api/cars";
+const CARS_ENDPOINT_URL =
+  "https://back-end-car-rental-production.up.railway.app/api/cars";
 
 const SearchSection = () => {
   const [cars, setCars] = useState([]);
@@ -17,7 +18,7 @@ const SearchSection = () => {
     available_time_at: "00:00",
     available_date_at: new Date().toISOString().slice(0, 10),
     available_at: `${new Date().toISOString().slice(0, 10)}T00:00:00Z`,
-    capacity: "1",
+    capacity: 1,
     all_car: "allcar",
   });
 
@@ -34,6 +35,7 @@ const SearchSection = () => {
     const driverTypeParam = event.target.value;
     setFilterCar((prevState) => ({
       ...prevState,
+      all_car: "isFilter",
       driverType: driverTypeParam,
     }));
   };
@@ -42,6 +44,7 @@ const SearchSection = () => {
     const capacityParam = event.target.value;
     setFilterCar((prevState) => ({
       ...prevState,
+      all_car: "isFilter",
       capacity: capacityParam,
     }));
   };
@@ -80,30 +83,16 @@ const SearchSection = () => {
   };
 
   const onShowFilterCars = async (filter) => {
-    if (filter.all_car === "allcar") {
+    if (filter.all_car === "allcar" && filter.driverType === null && filter.capacity === 1) {
       const cars = await axios.get(CARS_ENDPOINT_URL);
       setCars(cars.data.data);
     }
 
-    if (filter.capacity != null) {
+    if (filter.capacity > 1) {
       const cars = await axios.get(
         CARS_ENDPOINT_URL + "?capacity=" + filter.capacity
       );
       setCars(cars.data.data);
-    }
-
-    if (filter.driverType != null) {
-      const filterCarDriverType = await axios.get(
-        CARS_ENDPOINT_URL + "?driverType=" + filter.driverType
-      );
-      setCars(filterCarDriverType.data.data);
-    }
-
-    if (filter.available_at != null && filter.all_car === "isFilter") {
-      const filterCarByDate = await axios.get(
-        CARS_ENDPOINT_URL + "?availableAt=" + filter.available_at
-      );
-      setCars(filterCarByDate.data.data);
     }
 
     if (filter.driverType != null && filter.available_at != null) {
@@ -119,7 +108,6 @@ const SearchSection = () => {
       setCars(cars.data.data);
     }
   };
-  
 
   return (
     <>
@@ -142,8 +130,8 @@ const SearchSection = () => {
                   onChange={(event) => onFilterCarDriverTypeParam(event)}
                 >
                   <option value="3">Pilih Tipe Driver</option>
-                  <option value="1">Dengan Sopir</option>
-                  <option value="2">Tanpa Sopir (Lepas Kunci)</option>
+                  <option value="Dengan Sopir">Dengan Sopir</option>
+                  <option value="Tanpa Sopir (Lepas Kunci)">Tanpa Sopir (Lepas Kunci)</option>
                 </select>
               </div>
               <div className="input-group col-xl px-3">
@@ -194,20 +182,24 @@ const SearchSection = () => {
 
       <section className="marginCard">
         <div className="d-flex align-content-center flex-wrap justify-content-center w-100 mt-5 pt-5">
-          <div className="px-3 py-2">
-          <p className="font-24 text-center">{cars.length === 0 ? `Data Kendaraan Kosong` : `` }</p>
-          </div>
+          {cars.length === 0 ? (
+            <div className="px-3 py-2">
+              <p className="font-24 text-center"> Data Kendaraan Kosong</p>
+            </div>
+          ) : (
+            ``
+          )}
           {cars.map((car, index) => {
             return (
-              <div key={index} className="px-3 py-2">
-                <div className="card shadow-sm w-20">
+              <div key={index} className="px-3 py-2 w-25">
+                <div className="card shadow-sm ">
                   <img
                     src={car.image}
                     className="card-img-top img-fluid"
                     alt="name"
                     style={{
                       height: "195px",
-                      width: "250px",
+                      width: "350px",
                       borderRadius: "3px",
                       objectFit: "cover",
                     }}
@@ -217,7 +209,9 @@ const SearchSection = () => {
                       {car.manufacture}/{car.model}
                     </p>
                     <p className="fw-bold">Rp. {car.price} / hari</p>
-                    <p className="card-text h-120">{car.description}</p>
+                    <p className="card-text" style={{
+                      height: "120px",
+                    }}>{car.description}</p>
                     <div className="my-2">
                       <FontAwesomeIcon icon={faKey} className="pe-1" />{" "}
                       {car.driverType}
