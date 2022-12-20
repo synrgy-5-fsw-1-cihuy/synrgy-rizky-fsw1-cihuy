@@ -33,8 +33,8 @@ const DataCar = () => {
     <>
       <section className="marginCard me-5 mt-3">
         <h1 className="text-center font-36">Data Mobil Rental</h1>
-        <div className="d-flex justify-content-center flex-wrap gap-1 mt-2 pt-2">
-          <div className="px-3 py-2">
+        <div className="d-flex justify-content-center flex-wrap gap-2 mt-2 pt-2">
+          <div className="py-2">
             <p className="font-24 text-center">
               {cars.length === 0 ? `Data Kendaraan Kosong` : ``}
             </p>
