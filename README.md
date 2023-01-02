@@ -1,5 +1,8 @@
-# Belajar Git
+# Challange 8
 
-### Rizky Prayatman
-### Fullstack Web Development
-### Synrgy Academy BCA x Binar Academy
+## Synargy x Binar Academy Batch 5
+
+Tugas ini Challange 8
+
+Link Repositiry : <br>
+Link Deploy :
