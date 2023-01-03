@@ -3,3 +3,4 @@ node_modules
 coverage
 junit.xml
 .vscode
+package-lock.json
